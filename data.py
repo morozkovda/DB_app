@@ -12,11 +12,11 @@ add_button = st.button("Add")
 if add_button:
     st.session_state.user_input = user_input
 # try:
-    engine = create_engine(st.session_state.user_input)
-    query = "SELECT name FROM sqlite_master WHERE type='table'"
-    df = pd.read_sql(text(query), engine.connect())
-    st.write('Таблицы, которые содержатся в базе данных:')
-    st.write(df)
+engine = create_engine(st.session_state.user_input)
+query = "SELECT name FROM sqlite_master WHERE type='table'"
+df = pd.read_sql(text(query), engine.connect())
+st.write('Таблицы, которые содержатся в базе данных:')
+st.write(df)
 # except:
 #     st.write('Your input is wrong or null')
 
