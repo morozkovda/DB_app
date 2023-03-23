@@ -15,10 +15,10 @@ try:
     engine = create_engine(st.session_state.user_input)
     query = "SELECT name FROM sqlite_master WHERE type='table'"
     df = pd.read_sql(text(query), engine.connect())
+    st.write(df)
 except:
     st.write('Your DB tables will be here!')
 st.write('Таблицы, которые содержатся в базе данных:')
-st.write(df)
 
 user_query = st.text_input("Enter SQL query:")
 try:
