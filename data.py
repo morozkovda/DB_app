@@ -11,13 +11,12 @@ if "user_input" not in st.session_state:
 add_button = st.button("Add")
 if add_button:
     st.session_state.user_input = user_input
-if len(user_input) == 0:
-    st.write('Your DB tables will be here!')
-else:
+try:
     engine = create_engine(st.session_state.user_input)
-
-query = "SELECT name FROM sqlite_master WHERE type='table'"
-df = pd.read_sql(text(query), engine.connect())
+    query = "SELECT name FROM sqlite_master WHERE type='table'"
+    df = pd.read_sql(text(query), engine.connect())
+except:
+    st.write('Your DB tables will be here!')
 st.write('Таблицы, которые содержатся в базе данных:')
 st.write(df)
 
