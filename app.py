@@ -9,7 +9,7 @@ def open_youtube():
 
 st.title('Добро пожаловать на сервер шизофрения')
 user_input = st.text_input("Enter URL of your DB:")
-st.write('Example: sqlite:////Users/daniilmorozkov/PycharmProjects/DB_app/sqlite-sakila.db')
+st.write('Example: sqlite:///sqlite-sakila.db')
 if "user_input" not in st.session_state:
     st.session_state.user_input = ''
 if st.button('Add'):

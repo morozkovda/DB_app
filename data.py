@@ -5,14 +5,14 @@ from PIL import Image
 
 st.title('Добро пожаловать на сервер шизофрения')
 user_input = st.text_input("Enter URL of your DB:")
-st.write('Example: sqlite:////Users/daniilmorozkov/PycharmProjects/DB_app/sqlite-sakila.db')
+st.write('Example: sqlite:///sqlite-sakila.db')
 if "user_input" not in st.session_state:
     st.session_state.user_input = ''
 add_button = st.button("Add")
 if add_button:
     st.session_state.user_input = user_input
 if len(user_input) == 0:
-    engine = create_engine('sqlite:////Users/daniilmorozkov/PycharmProjects/DB_app/sqlite-sakila.db')
+    engine = create_engine('sqlite:///sqlite-sakila.db')
 else:
     engine = create_engine(st.session_state.user_input)
 
