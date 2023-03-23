@@ -12,7 +12,7 @@ add_button = st.button("Add")
 if add_button:
     st.session_state.user_input = user_input
 if len(user_input) == 0:
-    engine = create_engine('sqlite:///sqlite-sakila.db')
+    st.write('Your DB tables will be here!')
 else:
     engine = create_engine(st.session_state.user_input)
 
