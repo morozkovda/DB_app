@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, text
 import pandas as pd
 from PIL import Image
 
-st.title('Добро пожаловать на сервер шизофрения')
+st.title('Welcome to simple DB app!')
 user_input = st.text_input("Enter URL of your DB:")
 st.write('Example: sqlite:///sqlite-sakila.db')
 if "user_input" not in st.session_state:
