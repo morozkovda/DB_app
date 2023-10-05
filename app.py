@@ -7,7 +7,7 @@ from PIL import Image
 def open_youtube():
     webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
-st.title('Добро пожаловать на сервер шизофрения')
+st.title('Welcome to simple DB app!')
 user_input = st.text_input("Enter URL of your DB:")
 st.write('Example: sqlite:///sqlite-sakila.db')
 if "user_input" not in st.session_state:
